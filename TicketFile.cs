@@ -90,7 +90,7 @@ namespace TicketingSystem
                 sw.WriteLine($"{bugDefect.ticketId},{bugDefect.summary},{bugDefect.status},{bugDefect.priority},{bugDefect.submitter},{bugDefect.assigned},{string.Join("|", bugDefect.watching)},{bugDefect.severity}");
                 sw.Close();
                 Tickets.Add(bugDefect);
-                logger.Info("Ticket ID: {Id} added", bugDefect.ticketId);
+                logger.Info("Ticket ID {Id} added", bugDefect.ticketId);
             } 
             catch(Exception ex)
             {
@@ -107,7 +107,7 @@ namespace TicketingSystem
                 sw.WriteLine($"{enhancement.ticketId},{enhancement.summary},{enhancement.status},{enhancement.priority},{enhancement.submitter},{enhancement.assigned},{string.Join("|", enhancement.watching)},{enhancement.software},{enhancement.cost},{enhancement.reason},{enhancement.estimate}");
                 sw.Close();
                 Tickets.Add(enhancement);
-                logger.Info("Ticket ID: {Id} added", enhancement.ticketId);
+                logger.Info("Ticket ID {Id} added", enhancement.ticketId);
             } 
             catch(Exception ex)
             {
@@ -124,7 +124,7 @@ namespace TicketingSystem
                 sw.WriteLine($"{task.ticketId},{task.summary},{task.status},{task.priority},{task.submitter},{task.assigned},{string.Join("|", task.watching)},{task.projectName},{task.dueDate}");
                 sw.Close();
                 Tickets.Add(task);
-                logger.Info("Ticket ID: {Id} added", task.ticketId);
+                logger.Info("Ticket ID {Id} added", task.ticketId);
             } 
             catch(Exception ex)
             {

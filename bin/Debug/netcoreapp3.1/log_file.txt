@@ -404,3 +404,11 @@
 2020-10-20 22:59:52.7556|INFO|TicketingSystem.TicketFile|Ticket ID: 4 added
 2020-10-20 23:00:34.7320|INFO|TicketingSystem.Program|User choice: ""
 2020-10-20 23:00:34.7320|INFO|TicketingSystem.Program|Program ended
+2020-10-20 23:05:43.4048|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 23:05:43.4138|INFO|TicketingSystem.Program|Program ended
+2020-10-20 23:05:47.3114|INFO|TicketingSystem.Program|Program started
+2020-10-20 23:05:47.3461|INFO|TicketingSystem.TicketFile|Tickets in file: 4
+2020-10-20 23:05:53.2692|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 23:05:56.7798|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 23:09:17.5761|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 23:09:17.5828|INFO|TicketingSystem.Program|Program ended
