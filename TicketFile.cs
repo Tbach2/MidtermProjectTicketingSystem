@@ -22,19 +22,55 @@ namespace TicketingSystem
                 StreamReader sr = new StreamReader(filePath);
                 while (!sr.EndOfStream)
                 {
-                    Ticket ticket = new Ticket();
+                    
                     string line = sr.ReadLine();
+                    string[] ticketDetails = line.Split(',');
+                    if (ticketDetails.Length == 8)
+                    {
+                        BugDefect bugDefect = new BugDefect();
 
-                        string[] ticketDetails = line.Split(',');
-                        ticket.ticketId = UInt64.Parse(ticketDetails[0]);
-                        ticket.summary = ticketDetails[1];
-                        ticket.status = ticketDetails[2];
-                        ticket.priority = ticketDetails[3];
-                        ticket.submitter = ticketDetails[4];
-                        ticket.assigned = ticketDetails[5];
-                        ticket.watching = ticketDetails[6].Split('|').ToList();
-               
-                    Tickets.Add(ticket);
+                        bugDefect.ticketId = UInt64.Parse(ticketDetails[0]);
+                        bugDefect.summary = ticketDetails[1];
+                        bugDefect.status = ticketDetails[2];
+                        bugDefect.priority = ticketDetails[3];
+                        bugDefect.submitter = ticketDetails[4];
+                        bugDefect.assigned = ticketDetails[5];
+                        bugDefect.watching = ticketDetails[6].Split('|').ToList();
+                        bugDefect.severity = ticketDetails[7];
+                        Tickets.Add(bugDefect);
+                    }
+                    else if (ticketDetails.Length == 11)
+                    {
+                        Enhancement enhancement = new Enhancement();
+
+                        enhancement.ticketId = UInt64.Parse(ticketDetails[0]);
+                        enhancement.summary = ticketDetails[1];
+                        enhancement.status = ticketDetails[2];
+                        enhancement.priority = ticketDetails[3];
+                        enhancement.submitter = ticketDetails[4];
+                        enhancement.assigned = ticketDetails[5];
+                        enhancement.watching = ticketDetails[6].Split('|').ToList();
+                        enhancement.software = ticketDetails[7];
+                        enhancement.cost = ticketDetails[8];
+                        enhancement.reason = ticketDetails[9];
+                        enhancement.estimate = ticketDetails[10];
+                        Tickets.Add(enhancement);
+                    }
+                    else if (ticketDetails.Length == 9)
+                    {
+                        Task task = new Task();
+
+                        task.ticketId = UInt64.Parse(ticketDetails[0]);
+                        task.summary = ticketDetails[1];
+                        task.status = ticketDetails[2];
+                        task.priority = ticketDetails[3];
+                        task.submitter = ticketDetails[4];
+                        task.assigned = ticketDetails[5];
+                        task.watching = ticketDetails[6].Split('|').ToList();
+                        task.projectName = ticketDetails[7];
+                        task.dueDate = ticketDetails[8];
+                        Tickets.Add(task);
+                    }
                 }
                 sr.Close();
                 logger.Info("Tickets in file {Count}", Tickets.Count);
@@ -45,17 +81,50 @@ namespace TicketingSystem
             }
         }
 
-
-        public void AddTicket(Ticket ticket)
+        public void AddBugDefect(BugDefect bugDefect)
         {
             try
             {
-                ticket.ticketId = Tickets.Max(m => m.ticketId) + 1;
+                bugDefect.ticketId = Tickets.Max(m => m.ticketId) + 1;
                 StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{ticket.ticketId},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join("|", ticket.watching)}");
+                sw.WriteLine($"{bugDefect.ticketId},{bugDefect.summary},{bugDefect.status},{bugDefect.priority},{bugDefect.submitter},{bugDefect.assigned},{string.Join("|", bugDefect.watching)},{bugDefect.severity}");
                 sw.Close();
-                Tickets.Add(ticket);
-                logger.Info("Ticket id {Id} added", ticket.ticketId);
+                Tickets.Add(bugDefect);
+                logger.Info("Ticket id {Id} added", bugDefect.ticketId);
+            } 
+            catch(Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+        }
+
+        public void AddEnhancemant(Enhancement enhancement)
+        {
+            try
+            {
+                enhancement.ticketId = Tickets.Max(m => m.ticketId) + 1;
+                StreamWriter sw = new StreamWriter(filePath, true);
+                sw.WriteLine($"{enhancement.ticketId},{enhancement.summary},{enhancement.status},{enhancement.priority},{enhancement.submitter},{enhancement.assigned},{string.Join("|", enhancement.watching)},{enhancement.software},{enhancement.cost},{enhancement.reason},{enhancement.estimate}");
+                sw.Close();
+                Tickets.Add(enhancement);
+                logger.Info("Ticket id {Id} added", enhancement.ticketId);
+            } 
+            catch(Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+        }
+
+        public void AddTask(Task task)
+        {
+            try
+            {
+                task.ticketId = Tickets.Max(m => m.ticketId) + 1;
+                StreamWriter sw = new StreamWriter(filePath, true);
+                sw.WriteLine($"{task.ticketId},{task.summary},{task.status},{task.priority},{task.submitter},{task.assigned},{string.Join("|", task.watching)},{task.projectName},{task.dueDate}");
+                sw.Close();
+                Tickets.Add(task);
+                logger.Info("Ticket id {Id} added", task.ticketId);
             } 
             catch(Exception ex)
             {
