@@ -9,11 +9,16 @@ namespace TicketingSystem
         private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            string ticketFilePath = Directory.GetCurrentDirectory() + "\\tickets.csv";
+            string bugDefectTicketFilePath = Directory.GetCurrentDirectory() + "\\tickets.csv";
+            string enhancementTicketFilePath = Directory.GetCurrentDirectory() + "\\enhancements.csv";
+            string taskTicketFilePath = Directory.GetCurrentDirectory() + "\\tasks.csv";
 
             logger.Info("Program started");
 
-            TicketFile ticketFile = new TicketFile(ticketFilePath);
+            BugDefectTicketFile bugDefectTicketFile = new BugDefectTicketFile(bugDefectTicketFilePath);
+            EnhancementTicketFile enhancementTicketFile = new EnhancementTicketFile(enhancementTicketFilePath);
+            TaskTicketFile taskTicketFile = new TaskTicketFile(taskTicketFilePath);
+
 
             string choice = "";
             do
@@ -69,7 +74,7 @@ namespace TicketingSystem
                         Console.WriteLine("Enter Bug/Defect ticket severity");
                         bugDefect.severity = Console.ReadLine();
 
-                        ticketFile.AddBugDefect(bugDefect);
+                        bugDefectTicketFile.AddBugDefect(bugDefect);
                     }
 
                     if (ticketTypeChoice == "2")
@@ -116,7 +121,7 @@ namespace TicketingSystem
                         Console.WriteLine("Enter Enhancement ticket estimate");
                         enhancement.estimate = Console.ReadLine();
 
-                        ticketFile.AddEnhancemant(enhancement);
+                        enhancementTicketFile.AddEnhancemant(enhancement);
                     }
                     if (ticketTypeChoice == "3")
                     {
@@ -156,14 +161,34 @@ namespace TicketingSystem
                         Console.WriteLine("Enter Task ticket due date");
                         task.dueDate = Console.ReadLine();
 
-                        ticketFile.AddTask(task);
+                        taskTicketFile.AddTask(task);
                     }
                 } 
 
                 else if (choice == "2")
                 {
-                    foreach(Ticket m in ticketFile.Tickets)
+                    Console.WriteLine("1) Bug/Defect");
+                    Console.WriteLine("2) Enhancement");
+                    Console.WriteLine("3) Task");
+                    string ticketTypeChoice = Console.ReadLine();
+                    logger.Info("User choice: {Choice}", ticketTypeChoice);
+
+                    if (ticketTypeChoice == "1")
+                    {
+                        foreach(Ticket m in bugDefectTicketFile.BugDefectTickets)
                     { Console.WriteLine(m.Display()); }
+                    }
+                    else if (ticketTypeChoice == "2")
+                    {
+                        foreach(Ticket m in enhancementTicketFile.EnhancementTickets)
+                    { Console.WriteLine(m.Display()); }
+                    }
+                    else if (ticketTypeChoice == "3")
+                    {
+                        foreach(Ticket m in taskTicketFile.TaskTickets)
+                    { Console.WriteLine(m.Display()); }
+                    }
+                    
                 }
             } while (choice == "1" || choice == "2");
             logger.Info("Program ended");
