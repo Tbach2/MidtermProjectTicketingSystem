@@ -366,3 +366,41 @@
 2020-10-20 22:31:35.8123|INFO|TicketingSystem.Program|User choice: "3"
 2020-10-20 22:33:21.7606|INFO|TicketingSystem.TicketFile|Ticket id 3 added
 2020-10-20 22:33:41.3303|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:51:15.1313|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:51:15.1649|INFO|TicketingSystem.TicketFile|Tickets in file 3
+2020-10-20 22:51:16.5506|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:51:56.1571|INFO|TicketingSystem.Program|User choice: "dotnet run"
+2020-10-20 22:51:56.1634|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:52:04.4476|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:52:04.4804|INFO|TicketingSystem.TicketFile|Tickets in file 3
+2020-10-20 22:53:18.0379|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:54:05.6128|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 22:54:05.6197|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:54:09.6772|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:54:09.7102|INFO|TicketingSystem.TicketFile|Tickets in file: 3
+2020-10-20 22:54:10.6299|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:55:20.9978|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 22:55:21.0055|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:55:24.7693|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:55:24.8032|INFO|TicketingSystem.TicketFile|Tickets in file: 3
+2020-10-20 22:55:27.6909|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:56:05.9935|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 22:56:05.9935|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:56:09.6420|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:56:09.6758|INFO|TicketingSystem.TicketFile|Tickets in file: 3
+2020-10-20 22:56:10.2448|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:57:03.7798|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 22:57:03.7867|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:57:07.3263|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:57:07.3643|INFO|TicketingSystem.TicketFile|Tickets in file: 3
+2020-10-20 22:57:08.8136|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:58:14.8695|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 22:58:14.8695|INFO|TicketingSystem.Program|Program ended
+2020-10-20 22:58:18.6687|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:58:18.7073|INFO|TicketingSystem.TicketFile|Tickets in file: 3
+2020-10-20 22:58:26.3141|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:58:33.4021|INFO|TicketingSystem.Program|User choice: "1"
+2020-10-20 22:58:35.0978|INFO|TicketingSystem.Program|User choice: "2"
+2020-10-20 22:59:52.7556|INFO|TicketingSystem.TicketFile|Ticket ID: 4 added
+2020-10-20 23:00:34.7320|INFO|TicketingSystem.Program|User choice: ""
+2020-10-20 23:00:34.7320|INFO|TicketingSystem.Program|Program ended

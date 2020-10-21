@@ -20,14 +20,14 @@ namespace TicketingSystem
 
         public virtual string Display()
         {
-            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}";
+            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\n";
         }
     }
     public class BugDefect : Ticket
     {
         public string severity { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
+            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSeverity:{severity}\n";
         }
     }
         public class Enhancement : Ticket
@@ -37,7 +37,7 @@ namespace TicketingSystem
         public string reason { get; set; }
         public string estimate { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
+            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSoftware: {software}\nCost: {cost}\nReason: {reason}\nEstimate: {estimate}\n";
         }
     }
             public class Task : Ticket
@@ -45,7 +45,7 @@ namespace TicketingSystem
         public string projectName { get; set; }
         public string dueDate { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{dueDate}";
+            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nProject Name: {projectName}\nDue Date: {dueDate}\n";
         }
     }
 }
