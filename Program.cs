@@ -27,52 +27,145 @@ namespace TicketingSystem
 
                 if (choice == "1")
                 {
-                    Ticket ticket = new Ticket();
 
-                    Console.WriteLine("Enter ticket summary");
-                    ticket.summary = Console.ReadLine();
+                    Console.WriteLine("1) Bug/Defect");
+                    Console.WriteLine("2) Enhancement");
+                    Console.WriteLine("3) Task");
+                    string ticketTypeChoice = Console.ReadLine();
+                    logger.Info("User choice: {Choice}", ticketTypeChoice);
 
-                    Console.WriteLine("Enter ticket status");
-                    ticket.status = Console.ReadLine();
-
-                    Console.WriteLine("Enter ticket priority");
-                    ticket.priority = Console.ReadLine();
-
-                    Console.WriteLine("Enter ticket submitter");
-                    ticket.submitter = Console.ReadLine();
-
-                    Console.WriteLine("Enter ticket asignee");
-                    ticket.assigned = Console.ReadLine();
-
-                    string input;
-                    do
+                    if (ticketTypeChoice == "1")
                     {
-                        Console.WriteLine("Enter watcher (or done to quit)");
-                        input = Console.ReadLine();
-                        if (input != "done" && input.Length > 0)
+                        BugDefect bugDefect = new BugDefect();
+
+                        Console.WriteLine("Enter Bug/Defect ticket summary");
+                        bugDefect.summary = Console.ReadLine();
+
+                        Console.WriteLine("Enter Bug/Defect ticket status");
+                        bugDefect.status = Console.ReadLine();
+
+                        Console.WriteLine("Enter Bug/Defect ticket priority");
+                        bugDefect.priority = Console.ReadLine();
+
+                        Console.WriteLine("Enter Bug/Defect ticket submitter");
+                        bugDefect.submitter = Console.ReadLine();
+
+                        Console.WriteLine("Enter Bug/Defect ticket asignee");
+                        bugDefect.assigned = Console.ReadLine();
+
+                        string input;
+                        do
                         {
-                            ticket.watching.Add(input);
+                            Console.WriteLine("Enter Bug/Defect ticket watcher (or done to quit)");
+                            input = Console.ReadLine();
+                            if (input != "done" && input.Length > 0)
+                            { bugDefect.watching.Add(input); }
                         }
-                    }
-                    while (input != "done");
+                        while (input != "done");
 
-                    if (ticket.watching.Count == 0)
+                        if (bugDefect.watching.Count == 0)
+                        { bugDefect.watching.Add("(no watchers listed)"); }
+
+                        Console.WriteLine("Enter Bug/Defect ticket severity");
+                        bugDefect.severity = Console.ReadLine();
+
+                        ticketFile.AddBugDefect(bugDefect);
+                    }
+
+                    if (ticketTypeChoice == "2")
                     {
-                        ticket.watching.Add("(no watchers listed)");
+                        Enhancement enhancement = new Enhancement();
+
+                        Console.WriteLine("Enter Enhancement ticket summary");
+                        enhancement.summary = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket status");
+                        enhancement.status = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket priority");
+                        enhancement.priority = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket submitter");
+                        enhancement.submitter = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket asignee");
+                        enhancement.assigned = Console.ReadLine();
+
+                        string input;
+                        do
+                        {
+                            Console.WriteLine("Enter Enhancement ticket watcher (or done to quit)");
+                            input = Console.ReadLine();
+                            if (input != "done" && input.Length > 0)
+                            { enhancement.watching.Add(input); }
+                        }
+                        while (input != "done");
+
+                        if (enhancement.watching.Count == 0)
+                        { enhancement.watching.Add("(no watchers listed)"); }
+
+                        Console.WriteLine("Enter Enhancement ticket software");
+                        enhancement.software = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket cost");
+                        enhancement.cost = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket reason");
+                        enhancement.reason = Console.ReadLine();
+
+                        Console.WriteLine("Enter Enhancement ticket estimate");
+                        enhancement.estimate = Console.ReadLine();
+
+                        ticketFile.AddEnhancemant(enhancement);
                     }
-                    ticketFile.AddTicket(ticket);
+                    if (ticketTypeChoice == "3")
+                    {
+                        Task task = new Task();
 
+                        Console.WriteLine("Enter Task ticket summary");
+                        task.summary = Console.ReadLine();
 
+                        Console.WriteLine("Enter Task ticket status");
+                        task.status = Console.ReadLine();
+
+                        Console.WriteLine("Enter Task ticket priority");
+                        task.priority = Console.ReadLine();
+
+                        Console.WriteLine("Enter Task ticket submitter");
+                        task.submitter = Console.ReadLine();
+
+                        Console.WriteLine("Enter Task ticket asignee");
+                        task.assigned = Console.ReadLine();
+
+                        string input;
+                        do
+                        {
+                            Console.WriteLine("Enter Task ticket watcher (or done to quit)");
+                            input = Console.ReadLine();
+                            if (input != "done" && input.Length > 0)
+                            { task.watching.Add(input); }
+                        }
+                        while (input != "done");
+
+                        if (task.watching.Count == 0)
+                        { task.watching.Add("(no watchers listed)"); }
+
+                        Console.WriteLine("Enter Task ticket project name");
+                        task.projectName = Console.ReadLine();
+
+                        Console.WriteLine("Enter Task ticket due date");
+                        task.dueDate = Console.ReadLine();
+
+                        ticketFile.AddTask(task);
+                    }
                 } 
+
                 else if (choice == "2")
                 {
                     foreach(Ticket m in ticketFile.Tickets)
-                    {
-                        Console.WriteLine(m.Display());
-                    }
+                    { Console.WriteLine(m.Display()); }
                 }
             } while (choice == "1" || choice == "2");
-
             logger.Info("Program ended");
         }
     }
