@@ -20,7 +20,6 @@ namespace TicketingSystem
             try
             {
                 StreamReader sr = new StreamReader(filePath);
-                sr.ReadLine();
                 while (!sr.EndOfStream)
                 {
                     Ticket ticket = new Ticket();
@@ -38,8 +37,7 @@ namespace TicketingSystem
                     Tickets.Add(ticket);
                 }
                 sr.Close();
-                //Tickets.Count off by 1 
-                logger.Info("Tickets in file {Count}", Tickets.Count+1);
+                logger.Info("Tickets in file {Count}", Tickets.Count);
             }
             catch (Exception ex)
             {
