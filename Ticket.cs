@@ -27,7 +27,7 @@ namespace TicketingSystem
     {
         public string severity { get; set; }
         public override string Display(){
-            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSeverity:{severity}\n";
+            return $"Ticket ID: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSeverity: {severity}\n";
         }
     }
         public class Enhancement : Ticket
