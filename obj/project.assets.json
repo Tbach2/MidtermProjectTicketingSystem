@@ -367,11 +367,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses\\TicketingSystem\\TicketingSystem.csproj",
+      "projectUniqueName": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses - Copy\\TicketingSystem\\TicketingSystem.csproj",
       "projectName": "TicketingSystem",
-      "projectPath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses\\TicketingSystem\\TicketingSystem.csproj",
+      "projectPath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses - Copy\\TicketingSystem\\TicketingSystem.csproj",
       "packagesPath": "C:\\Users\\bachs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses\\TicketingSystem\\obj\\",
+      "outputPath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses - Copy\\TicketingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bachs\\AppData\\Roaming\\NuGet\\NuGet.Config",

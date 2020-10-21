@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iHuRNREa4lJmFk8F6Ixa6JMQuM751n1cXnXpoOBwKrTAr7sdYt1PJMh2BI98KHV9nc2WwjmSFd4+6pTf2D6Qyg==",
+  "dgSpecHash": "96F7mnxYrayHW65mHG/F9VuYoCkuQYOQSOBZMGPK3ACgHroTU2YYyLrE0NyVJ7TROocA/TGgs8YQA26v2RXuCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses\\TicketingSystem\\TicketingSystem.csproj",
+  "projectFilePath": "C:\\Users\\bachs\\Desktop\\School\\.Net Databases\\TicketingSystemWithClasses - Copy\\TicketingSystem\\TicketingSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bachs\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
     "C:\\Users\\bachs\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",

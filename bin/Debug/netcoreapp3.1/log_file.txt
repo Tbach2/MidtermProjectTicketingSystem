@@ -360,3 +360,9 @@
 2020-10-20 15:54:13.2022|INFO|TicketingSystem.Program|User choice: "1"
 2020-10-20 16:23:02.5067|INFO|TicketingSystem.Program|Program started
 2020-10-20 16:23:02.5399|INFO|TicketingSystem.TicketFile|Tickets in file 2
+2020-10-20 22:31:27.0646|INFO|TicketingSystem.Program|Program started
+2020-10-20 22:31:27.0984|INFO|TicketingSystem.TicketFile|Tickets in file 2
+2020-10-20 22:31:30.4554|INFO|TicketingSystem.Program|User choice: "1"
+2020-10-20 22:31:35.8123|INFO|TicketingSystem.Program|User choice: "3"
+2020-10-20 22:33:21.7606|INFO|TicketingSystem.TicketFile|Ticket id 3 added
+2020-10-20 22:33:41.3303|INFO|TicketingSystem.Program|User choice: "2"

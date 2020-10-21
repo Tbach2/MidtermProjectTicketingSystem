@@ -27,7 +27,7 @@ namespace TicketingSystem
     {
         public string severity { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
+            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
         }
     }
         public class Enhancement : Ticket
@@ -37,7 +37,7 @@ namespace TicketingSystem
         public string reason { get; set; }
         public string estimate { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
+            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
         }
     }
             public class Task : Ticket
@@ -45,7 +45,7 @@ namespace TicketingSystem
         public string projectName { get; set; }
         public string dueDate { get; set; }
         public override string Display(){
-            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{dueDate}";
+            return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{dueDate}";
         }
     }
 }
