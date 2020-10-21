@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TicketingSystem
 {
-    public class Ticket
+    public abstract class Ticket
     {
         public UInt64 ticketId { get; set; }
         public string summary { get; set; }
@@ -18,9 +18,34 @@ namespace TicketingSystem
             watching = new List<string>();
         }
 
-        public string Display()
+        public virtual string Display()
         {
             return $"{ticketId},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}";
+        }
+    }
+    public class BugDefect : Ticket
+    {
+        public string severity { get; set; }
+        public override string Display(){
+            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
+        }
+    }
+        public class Enhancement : Ticket
+    {
+        public string software { get; set; }
+        public string cost { get; set; }
+        public string reason { get; set; }
+        public string estimate { get; set; }
+        public override string Display(){
+            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
+        }
+    }
+            public class Task : Ticket
+    {
+        public string projectName { get; set; }
+        public string dueDate { get; set; }
+        public override string Display(){
+            return $"{ticketId},{summary},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{dueDate}";
         }
     }
 }
